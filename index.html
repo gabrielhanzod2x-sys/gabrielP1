@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gabriel Lemos · Automação, Web Designer e Análise de Dados</title>
+  <meta name="description" content="Portfólio de Gabriel Luiz Vieira Lemos: automação, web design e análise de dados. Sites com identidade própria e sistemas que automatizam processos. Poços de Caldas, MG.">
+  <meta name="theme-color" content="#050505">
+  <meta property="og:title" content="Gabriel Lemos · Portfólio">
+  <meta property="og:description" content="Sites autorais e sistemas que automatizam processos.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/hero/capa-m.jpg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="assets/img/eu/gabriel-entrada.jpeg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body class="is-intro">
+
+  <!-- ================= INTRO: portão + vídeo (carro entrando no túnel) ================= -->
+  <div id="intro" class="intro" aria-label="Introdução">
+    <div class="intro__gate" id="introGate">
+      <div class="intro__mark">
+        <img class="intro__mascot intro__portrait" src="assets/img/eu/gabriel-entrada.jpeg" alt="Foto de Gabriel Luiz Vieira Lemos" width="1086" height="1448">
+      </div>
+      <p class="intro__eyebrow intro__eyebrow--glow">Portfólio</p>
+      <h1 class="intro__name serif"><span data-txt="pessoa.nomeCurto"></span> <em data-txt="pessoa.sobrenome"></em></h1>
+      <p class="intro__role mono" data-txt="pessoa.cargo"></p>
+      <div class="intro__actions">
+        <button class="btn btn--accent intro__enter" id="introEnter" type="button">
+          <span>Entrar</span>
+          <span class="btn__note mono">com som</span>
+        </button>
+        <button class="intro__mute mono" id="introEnterMuted" type="button">Entrar sem som</button>
+      </div>
+      <p class="intro__hint mono">Entre para conhecer o portfólio.</p>
+    </div>
+  </div>
+
+  <!-- ================= FUNDO: cetim preto (shader) ================= -->
+  <canvas id="satin" class="satin" aria-hidden="true"></canvas>
+  <div class="satin-fallback" aria-hidden="true"></div>
+  <div class="wallpaper" id="wallpaper" aria-hidden="true"></div>
+
+  <!-- ================= NAVEGAÇÃO ================= -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#inicio" aria-label="Início">
+      <img class="nav__logo" src="assets/img/gabriel-4ksk-logo.png" alt="Gabriel Lemos 4KSK">
+    </a>
+    <nav class="nav__links" aria-label="Seções">
+      <a href="#inicio" data-sec="inicio">Início</a>
+      <a href="#omega" data-sec="omega">Omêga</a>
+      <a href="#trabalho" data-sec="trabalho">Trabalho</a>
+      <a href="#websites" data-sec="websites">Websites</a>
+      <a href="#sistemas" data-sec="sistemas">Sistemas</a>
+      <a href="#possibilidades" data-sec="possibilidades">Possibilidades</a>
+      <a href="#sobre" data-sec="sobre">Sobre</a>
+      <a href="#contato" data-sec="contato">Contato</a>
+    </nav>
+    <div class="nav__right">
+      <button class="sound" id="soundToggle" type="button" aria-pressed="false" aria-label="Tocar música">
+        <span class="sound__icon" aria-hidden="true"><svg class="sound__play" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg><svg class="sound__pause" viewBox="0 0 16 16" fill="currentColor"><path d="M3.5 2.5h3v11h-3zm6 0h3v11h-3z"/></svg></span>
+        <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="sound__label mono">Música</span>
+      </button>
+      <a class="btn btn--accent btn--sm" href="#contato">Vamos conversar</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <nav class="menu__links serif" aria-label="Menu">
+      <a href="#inicio">Início</a>
+      <a href="#omega">Omêga</a>
+      <a href="#trabalho">Trabalho</a>
+      <a href="#websites">Websites</a>
+      <a href="#sistemas">Sistemas</a>
+      <a href="#possibilidades">Possibilidades</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <p class="menu__foot mono"><span data-txt="pessoa.cidade"></span> · <span data-txt="pessoa.ano"></span></p>
+  </div>
+
+  <main id="main">
+
+    <!-- ================= 01 · HERO / APRESENTAÇÃO ================= -->
+    <section class="hero" id="inicio" data-rail="Início">
+
+      <div class="hero__content">
+        <p class="hero__status mono"><i class="dot" aria-hidden="true"></i><span data-txt="pessoa.status"></span></p>
+        <h1 class="hero__title serif">
+          <span class="hero__line"><span>Gabriel</span></span>
+          <span class="hero__line"><em>Lemos</em></span>
+        </h1>
+        <!-- no celular o logo entra no fluxo, entre o título e o cargo; no desktop fica absoluto à direita -->
+        <div class="hero__figure hero__logo-drop" aria-hidden="true"><img class="hero__brand-logo" src="assets/img/gabriel-4ksk-logo.png" alt="" width="1447" height="1000"></div>
+        <p class="hero__role mono" data-txt="pessoa.cargo"></p>
+        <p class="hero__text" data-txt="hero.texto"></p>
+        <div class="hero__actions">
+          <a class="btn btn--accent" href="#trabalho" data-txt="hero.botaoPrimario.texto"></a>
+          <a class="btn btn--ghost" href="#contato" data-txt="hero.botaoSecundario.texto"></a>
+        </div>
+        <button class="hero__transparent mono" id="heroTransparent" type="button" aria-pressed="false">Fundo transparente</button>
+      </div>
+
+
+      <p class="hero__meta mono"><span data-txt="pessoa.cidade"></span> · <span data-txt="pessoa.ano"></span></p>
+      <a class="hero__cue mono" href="#trabalho"><span data-txt="hero.cue"></span><i aria-hidden="true"></i></a>
+    </section>
+
+    <!-- ================= 02 · OMÊGA (projeto em destaque) ================= -->
+    <section class="omega" id="omega" data-rail="Omêga">
+      <div class="omega__aura" aria-hidden="true"></div>
+
+      <header class="omega__head">
+        <div class="omega__mark" data-reveal>
+          <img class="omega__logo" src="assets/img/omega/omega-logo.png" alt="Símbolo Omêga" width="900" height="886">
+          <p class="omega__tag mono" data-txt="omega.etiqueta"></p>
+        </div>
+        <div class="omega__intro">
+          <p class="omega__label mono">02 · <span data-txt="omega.label"></span></p>
+          <h2 class="omega__title" data-txt="omega.titulo"></h2>
+          <p class="omega__sub" data-txt="omega.subtitulo"></p>
+          <p class="omega__lead" data-txt="omega.chamada"></p>
+          <a class="omega__cta" id="omegaLink" href="#" target="_blank" rel="noopener">
+            <span data-txt="omega.link.texto"></span><span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </header>
+
+      <ul class="omega__pillars" id="omegaPillars"></ul>
+
+      <div class="omega__body">
+        <div class="omega__text" id="omegaText"></div>
+        <ul class="omega__stack" id="omegaStack" aria-label="Recursos técnicos"></ul>
+      </div>
+
+      <div class="omega__shots" id="omegaShots" role="list" aria-label="Telas do sistema"></div>
+      <p class="omega__note mono" data-txt="omega.nota"></p>
+    </section>
+
+    <!-- ================= 03 · TRABALHO (capa / leque de cards) ================= -->
+    <section class="deck" id="trabalho" data-rail="Trabalho">
+      <div class="deck__head">
+        <span class="deck__bar" aria-hidden="true"></span>
+        <p class="deck__eyebrow mono">Bem-vindo<br>ao meu</p>
+        <h2 class="deck__title" aria-label="Portfólio">
+          <span class="deck__word deck__word--ghost" aria-hidden="true">Portfólio</span>
+          <span class="deck__word deck__word--solid">Portfólio</span>
+          <span class="deck__word deck__word--outline" aria-hidden="true">Portfólio</span>
+        </h2>
+        <p class="deck__side deck__side--l mono" data-txt="pessoa.nome"></p>
+        <p class="deck__side deck__side--r mono" data-txt="pessoa.cargo"></p>
+        <i class="cross cross--tl" aria-hidden="true"></i><i class="cross cross--tr" aria-hidden="true"></i>
+        <i class="cross cross--bl" aria-hidden="true"></i><i class="cross cross--br" aria-hidden="true"></i>
+      </div>
+      <p class="deck__lead">Escolha uma capa para ir direto ao projeto, ou continue rolando para ver tudo.</p>
+      <div class="deck__fan" id="deckFan" role="list" aria-label="Capas dos projetos"></div>
+      <p class="deck__me mono"><span aria-hidden="true">▲</span> Trabalhos</p>
+    </section>
+
+    <!-- ================= 03 · WEBSITES (carrosséis alternados) ================= -->
+    <section class="works" id="websites" data-rail="Websites">
+      <header class="sec-head">
+        <p class="sec-head__label mono">04 · Websites</p>
+        <h2 class="sec-head__title serif">Sites que já <em>construí</em></h2>
+        <p class="sec-head__text">Cada linha é um projeto. As linhas deslizam em direções alternadas: passe o mouse para desacelerar, arraste para navegar e clique em um print para ampliar.</p>
+      </header>
+      <aside class="project-legend" id="projectLegend" aria-label="Legenda das categorias dos projetos"></aside>
+      <div id="worksList"></div>
+    </section>
+
+    <!-- ================= 04 · SISTEMAS & AUTOMAÇÕES ================= -->
+    <section class="systems" id="sistemas" data-rail="Sistemas">
+      <header class="sec-head">
+        <p class="sec-head__label mono">05 · <span data-txt="sistemas.label"></span></p>
+        <h2 class="sec-head__title serif" data-txt="sistemas.titulo"></h2>
+        <p class="sec-head__text" data-txt="sistemas.intro"></p>
+      </header>
+      <div class="systems__list" id="systemsList"></div>
+    </section>
+
+    <!-- ================= 05 · POSSIBILIDADES (o que seu site pode ter) ================= -->
+    <section class="poss" id="possibilidades" data-rail="Possibilidades">
+      <header class="sec-head">
+        <p class="sec-head__label mono">06 · <span data-txt="possibilidades.label"></span></p>
+        <h2 class="sec-head__title serif">O que seu site <em>pode ter?</em></h2>
+        <p class="sec-head__text" data-txt="possibilidades.intro"></p>
+      </header>
+      <div class="poss__grid" id="possGrid"></div>
+      <p class="poss__note mono" data-txt="possibilidades.nota"></p>
+      <div class="poss__cta" data-reveal>
+        <div class="poss__cta-text">
+          <p class="poss__cta-eyebrow mono" data-txt="possibilidades.cta.eyebrow"></p>
+          <h3 class="poss__cta-title" data-txt="possibilidades.cta.titulo"></h3>
+          <p class="poss__cta-desc" data-txt="possibilidades.cta.texto"></p>
+        </div>
+        <div class="poss__cta-side">
+          <p class="poss__picked mono" id="possPicked" aria-live="polite"></p>
+          <button class="btn btn--accent" id="possCta" type="button"><span data-txt="possibilidades.cta.botao"></span> <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 06 · SOBRE / QUALIFICAÇÕES / HABILIDADES ================= -->
+    <section class="about" id="sobre" data-rail="Sobre">
+      <header class="sec-head">
+        <p class="sec-head__label mono">07 · <span data-txt="sobre.label"></span></p>
+        <h2 class="sec-head__title serif" data-txt="sobre.titulo"></h2>
+      </header>
+
+      <div class="about__grid">
+        <aside class="profile">
+          <div class="profile__card">
+            <img class="profile__avatar" src="assets/img/eu/perfil.jpg" alt="Foto de Gabriel Luiz Vieira Lemos" width="900" height="1600" loading="lazy">
+            <div class="profile__info">
+              <p class="profile__name" data-txt="pessoa.nome"></p>
+              <p class="profile__role mono" data-txt="pessoa.cargo"></p>
+              <p class="profile__city mono" data-txt="pessoa.cidade"></p>
+            </div>
+          </div>
+        </aside>
+
+        <div class="about__body">
+          <div class="about__text" id="aboutText"></div>
+          <h3 class="about__sub mono">Qualificações</h3>
+          <ol class="quals" id="qualsList"></ol>
+          <h3 class="about__sub mono">Formações acadêmicas</h3>
+          <ol class="quals" id="educationList"></ol>
+        </div>
+      </div>
+
+      <div class="skills">
+        <header class="skills__head">
+          <p class="sec-head__label mono">08 · <span data-txt="habilidades.label"></span></p>
+          <h3 class="skills__title serif" data-txt="habilidades.titulo"></h3>
+        </header>
+
+        <div class="office" id="office">
+          <canvas class="office__canvas" id="officeCanvas" aria-label="Ícones 3D do Word, Excel e PowerPoint"></canvas>
+          <div class="office__fallback" aria-hidden="true">
+            <img src="assets/img/skills/word-2d.png" alt="" width="160" height="160" loading="lazy">
+            <img src="assets/img/skills/excel-2d.png" alt="" width="160" height="160" loading="lazy">
+            <img src="assets/img/skills/powerpoint-2d.png" alt="" width="160" height="160" loading="lazy">
+          </div>
+          <div class="office__caption">
+            <p class="office__name"><span data-txt="habilidades.office.titulo"></span> <span class="badge" data-txt="habilidades.office.nivel"></span></p>
+            <p class="office__detail mono" data-txt="habilidades.office.detalhe"></p>
+          </div>
+        </div>
+
+        <ul class="skill-list" id="skillList"></ul>
+      </div>
+    </section>
+
+    <!-- ================= 07 · CONTATO ================= -->
+    <section class="contact" id="contato" data-rail="Contato">
+      <p class="sec-head__label mono">09 · <span data-txt="contato.label"></span></p>
+      <h2 class="contact__title serif" data-txt="contato.titulo"></h2>
+      <p class="contact__text" data-txt="contato.texto"></p>
+      <form class="idea-form" id="ideaForm">
+        <div class="idea-form__heading">
+          <p class="idea-form__eyebrow mono">Faça seu pedido</p>
+          <h3>Qual é a sua <em>ideia?</em></h3>
+          <p>Escreva o que você imagina. Eu recebo sua ideia no WhatsApp e conversamos sobre o projeto.</p>
+        </div>
+        <label class="idea-form__field" for="ideaMessage">
+          <span class="mono">Conte sua ideia</span>
+          <textarea id="ideaMessage" name="idea" required maxlength="1500" placeholder="Ex.: Quero um site para minha loja, com catálogo, pedidos pelo WhatsApp e um visual moderno."></textarea>
+        </label>
+        <div class="idea-form__foot">
+          <span class="mono">Sua mensagem vai direto para mim</span>
+          <button class="btn btn--accent" type="submit">Enviar ideia <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+      <a class="contact__mail serif" id="contactMail" href="#"></a>
+      <ul class="contact__links mono" id="contactLinks"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="mono">© <span data-txt="pessoa.ano"></span> <span data-txt="pessoa.nome"></span></p>
+    <p class="mono" data-txt="rodape.assinatura"></p>
+    <a class="mono footer__top" href="#inicio">Voltar ao topo ↑</a>
+  </footer>
+
+  <!-- trilho do túnel (progresso por seção) -->
+  <aside class="rail" id="rail" aria-hidden="true">
+    <span class="rail__line"></span>
+    <span class="rail__car"></span>
+  </aside>
+
+  <!-- mascote 3D (companheiro fixo) -->
+  <div class="mascot" id="mascot" aria-hidden="true">
+    <canvas class="mascot__canvas" id="mascotCanvas"></canvas>
+    <span class="mascot__tip mono" id="mascotTip">Toque para ligar a rádio</span>
+  </div>
+
+
+  <!-- seletor de fundo -->
+  <button class="bg-picker__trigger mono" id="bgPickerOpen" type="button" aria-haspopup="dialog" aria-controls="bgPicker">
+    <span aria-hidden="true">◐</span> Trocar o fundo
+  </button>
+  <div class="bg-picker" id="bgPicker" hidden role="dialog" aria-modal="true" aria-labelledby="bgPickerTitle">
+    <div class="bg-picker__backdrop" data-bg-close></div>
+    <section class="bg-picker__panel">
+      <header class="bg-picker__head">
+        <div><p class="mono">Personalização</p><h2 class="serif" id="bgPickerTitle">Escolha o fundo</h2></div>
+        <button class="bg-picker__close" type="button" data-bg-close aria-label="Fechar">×</button>
+      </header>
+      <p class="bg-picker__hint">Escolha uma cor ou a imagem da capa. Sua preferência ficará salva.</p>
+      <div class="bg-picker__grid" id="bgPickerGrid"></div>
+    </section>
+  </div>
+  <!-- lightbox -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Visualização ampliada">
+    <button class="lightbox__close" id="lbClose" type="button" aria-label="Fechar">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" type="button" aria-label="Anterior">←</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" type="button" aria-label="Próximo">→</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="lbImg" alt="">
+      <figcaption class="lightbox__cap mono"><span id="lbTitle"></span><span id="lbCount"></span></figcaption>
+    </figure>
+  </div>
+
+  <audio id="music" src="assets/audio/musica.mp3" preload="auto"></audio>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/satin.js" defer></script>
+  <script src="assets/js/omega.js" defer></script>
+  <script src="assets/js/possibilidades.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/background-picker.js" defer></script>
+  <script src="assets/js/three-scenes.bundle.js" defer></script>
+</body>
+</html>
