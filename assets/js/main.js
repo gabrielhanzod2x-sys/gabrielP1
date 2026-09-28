@@ -67,6 +67,19 @@
   const n = D.capas.length; const spread = 9.5; // graus entre cards (pivô a 300% da altura → sobreposição de ~1/3)
   fan.innerHTML = D.capas.map((c, i) => {
     const a = (i - (n - 1) / 2) * spread;
+    if (c.destaque) {
+      return `<button class="card card--omega" role="listitem" style="--i:${i};--a:${a.toFixed(2)}deg;z-index:${n + 5}" data-target="${esc(c.alvo)}" aria-label="${esc(c.titulo)}, projeto em destaque nível ${esc(c.categoria)}">
+        <img src="${c.img}" alt="" loading="lazy" width="900" height="1200">
+        <span class="card__top mono"><span class="card__cat card__cat--omega">${esc(c.categoria)}</span><span>Destaque</span></span>
+        ${c.logo ? `<img class="card__brand" src="${c.logo}" alt="" aria-hidden="true">` : ''}
+        <span class="card__title card__title--omega">
+          ${esc(c.titulo)}
+          ${c.resumo ? `<span class="card__resumo">${esc(c.resumo)}</span>` : ''}
+          ${c.tags && c.tags.length ? `<span class="card__tags">${c.tags.map(t => `<i>${esc(t)}</i>`).join('')}</span>` : ''}
+          <span class="card__go card__go--omega">Ver projeto →</span>
+        </span>
+      </button>`;
+    }
     return `<button class="card" role="listitem" style="--i:${i};--a:${a.toFixed(2)}deg;z-index:${i}" data-target="${esc(c.alvo)}" aria-label="${esc(c.titulo)}, ${esc(c.categoria)}">
       <img src="${c.img}" alt="" loading="lazy" width="900" height="1200">
       <span class="card__top mono"><span class="card__cat">${esc(c.categoria)}</span><span>0${i + 1}</span></span>

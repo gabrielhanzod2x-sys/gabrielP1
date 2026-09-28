@@ -38,6 +38,9 @@
   $('#omegaStack').innerHTML = O.stack.map(t => `<li>${esc(t)}</li>`).join('');
 
   /* link do projeto */
+  const lvl = $('#omegaLevel');
+  if (lvl && O.nivelLegenda) lvl.innerHTML = '<b>ÔMEGA</b> · ' + esc(O.nivelLegenda);
+
   const cta = $('#omegaLink');
   if (cta && O.link && O.link.url) cta.href = O.link.url;
 
@@ -49,8 +52,9 @@
   };
 
   $('#omegaShots').innerHTML = O.telas.map((t, i) => `
-    <figure class="omega-shot${i === 0 ? ' omega-shot--wide' : ''}" role="listitem" data-reveal style="--d:${(i % 2) * 90}ms">
+    <figure class="omega-shot${t.destaque ? ' omega-shot--hero' : ''}" role="listitem" data-reveal style="--d:${(i % 2) * 90}ms">
       <button class="omega-shot__btn" type="button" data-gal="omega" data-i="${i}" aria-label="Ampliar: ${esc(t.nome)}">
+        ${t.destaque ? '<span class="omega-shot__flag mono">Imagem principal</span>' : ''}
         <img src="${t.thumb}" alt="${esc(O.subtitulo)}, ${esc(t.nome)}" loading="lazy">
         <span class="omega-shot__zoom mono">Ampliar</span>
       </button>

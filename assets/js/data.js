@@ -36,6 +36,7 @@ window.PORTFOLIO = {
   /* ---------- Omêga: sistema de agendamento do IASM (destaque principal) ---------- */
   omega: {
     etiqueta: 'Novo nível: Omêga',
+    nivelLegenda: 'Nível máximo de complexidade e destaque do portfólio.',
     label: 'Projeto em destaque',
     titulo: 'Omêga',
     subtitulo: 'Sistema de Agendamento de Consultas do IASM',
@@ -56,11 +57,11 @@ window.PORTFOLIO = {
     link: { url: 'https://iasmagendamento.com.br/', texto: 'Acessar o sistema' },
     nota: 'Telas reais do sistema em produção, capturadas na área interna com conta administrativa.',
     telas: [
+      { nome: 'Comparativo de custos', thumb: 'assets/img/omega/custos.webp',  full: 'assets/img/omega/custos-full.webp',  destaque: true, legenda: 'Análise de economia entre a gestão própria do IASM e o plano cooperativo, com importação de valores.' },
       { nome: 'Menu principal',        thumb: 'assets/img/omega/menu.webp',    full: 'assets/img/omega/menu-full.webp',    legenda: 'Três áreas em um só lugar: agendamentos, parte médica e gestão administrativa.' },
       { nome: 'Agendar consulta',      thumb: 'assets/img/omega/agendar.webp', full: 'assets/img/omega/agendar-full.webp', legenda: 'Calendário em duas etapas que mostra apenas horários realmente livres, sem conflito de agenda.' },
       { nome: 'Área do servidor',      thumb: 'assets/img/omega/hub.webp',     full: 'assets/img/omega/hub-full.webp',     legenda: 'Agendamentos, histórico completo de consultas e canal de feedback para o instituto.' },
       { nome: 'Parte médica',          thumb: 'assets/img/omega/medica.webp',  full: 'assets/img/omega/medica-full.webp',  legenda: 'Portal do médico com pacientes, dashboard de atendimentos e próximas consultas.' },
-      { nome: 'Comparativo de custos', thumb: 'assets/img/omega/custos.webp',  full: 'assets/img/omega/custos-full.webp',  legenda: 'Análise de economia entre a gestão própria do IASM e o plano cooperativo, com importação de valores.' },
       { nome: 'Segurança da conta',    thumb: 'assets/img/omega/conta.webp',   full: 'assets/img/omega/conta-full.webp',   legenda: 'Cada servidor gerencia a própria senha e a segurança do acesso.' },
     ],
   },
@@ -270,6 +271,10 @@ window.PORTFOLIO = {
     { id: 'barbearia', titulo: 'Barbearia Mr. Jones', categoria: 'Premium',   alvo: '#work-barbearia', img: 'assets/img/covers/barbearia.webp' },
     { id: 'fernanda',  titulo: 'Del Carmen Ink',      categoria: 'Premium',   alvo: '#work-fernanda',  img: 'assets/img/covers/fernanda.webp' },
     { id: 'anne',      titulo: 'Anne Crochê Art',     categoria: 'Premium',   alvo: '#work-anne',      img: 'assets/img/covers/anne.webp' },
+    { id: 'omega', titulo: 'IASM — Agendamento Médico', categoria: 'Ômega', alvo: '#omega', img: 'assets/img/omega/medica-full.webp',
+      destaque: true, logo: 'assets/img/omega/iasm-logo.png',
+      resumo: 'Sistema completo em produção: agendamento, banco de dados e criptografia para o IASM.',
+      tags: ['Banco de dados', 'Criptografia', 'Segurança', 'Agendamento médico'] },
     { id: 'aba',       titulo: 'ABA · Metas',         categoria: 'Premium',   alvo: '#work-aba',       img: 'assets/img/covers/aba.webp' },
     { id: 'sistemas',  titulo: 'Sistemas IASM',       categoria: 'Estágio',   alvo: '#sistemas',       img: 'assets/img/covers/sistemas.webp' },
     { id: 'cadu',      titulo: 'Cadu Pizzaria',       categoria: 'Comercial', alvo: '#work-cadu',      img: 'assets/img/covers/cadu.webp' },
