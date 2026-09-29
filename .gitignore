@@ -5,4 +5,6 @@ novos/
 *.rar
 *.zip
 *.mp4
+# Vídeos exibidos pelo site devem ser publicados no GitHub Pages.
+!assets/video/*.mp4
 P1.zip
