@@ -133,6 +133,17 @@ window.PORTFOLIO = {
       legendas: ['Apresentação: Estúdio Gimenez Barbershop', 'Roleta interativa: oito estilos de corte', 'Instrumentos em 3D: cadeira vintage', 'Galeria: cortes reais de Jhones', 'Planos de assinatura: Luso, Brasil e Itália'],
     },
     {
+      slug: 'carneiro',
+      nome: 'Barbearia do Carneiro',
+      categoria: 'premium',
+      subtitulo: 'Thales Rodrigues, barbeiro desde 2016, em Varginha',
+      descricao: 'Site institucional com identidade de tijolo e âmbar, avaliações reais do Google, tabela de serviços com cortes adultos e infantis, página de prótese capilar, vitrine de produtos em 3D e agendamento pelo WhatsApp ou pelo AppBarber.',
+      tags: ['HTML5', 'CSS3', 'JavaScript', '3D', 'Avaliações do Google', 'WhatsApp', 'AppBarber'],
+      url: 'https://gabrielhanzod2x-sys.github.io/gabrielteste-sites/',
+      prints: 5,
+      legendas: ['Apresentação: Barbearia do Carneiro', 'Cortes adultos e tabela de serviços', 'Prótese capilar: avaliação gratuita', 'Produtos e vitrine', 'Localização, horários e contatos'],
+    },
+    {
       slug: 'barbearia',
       nome: 'Barbearia Mr. Jones',
       categoria: 'premium',
@@ -268,6 +279,7 @@ window.PORTFOLIO = {
   /* ---------- Leque de capas (seção "Trabalho") ---------- */
   capas: [
     { id: 'gimenez', titulo: 'Estúdio Gimenez', categoria: 'Premium', alvo: '#work-gimenez', img: 'assets/img/covers/gimenez.webp' },
+    { id: 'carneiro', titulo: 'Barbearia do Carneiro', categoria: 'Premium', alvo: '#work-carneiro', img: 'assets/img/covers/carneiro.webp' },
     { id: 'barbearia', titulo: 'Barbearia Mr. Jones', categoria: 'Premium',   alvo: '#work-barbearia', img: 'assets/img/covers/barbearia.webp' },
     { id: 'fernanda',  titulo: 'Del Carmen Ink',      categoria: 'Premium',   alvo: '#work-fernanda',  img: 'assets/img/covers/fernanda.webp' },
     { id: 'anne',      titulo: 'Anne Crochê Art',     categoria: 'Premium',   alvo: '#work-anne',      img: 'assets/img/covers/anne.webp' },
